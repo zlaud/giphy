@@ -1,0 +1,69 @@
+.button {
+  width: 175px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91c9ff;
+  outline: none;
+  position: relative;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnstatic {
+  display: block;
+}
+
+.btnhover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(70%);
+}
+
+.button:hover .btnstatic {
+  opacity: 0;
+  transform: translateY(-70%);
+  transition: transform 1.4s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s linear;
+}
+.button:hover .btnhover {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 1.4s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 1.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btncontainer {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.glowblur,
+.glowline {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke: #91c9ff;
+  stroke-width: 2px;
+  stroke-dasharray: 480;
+  stroke-dashoffset: 480;
+  transition: stroke-dashoffset 0.5s ease-in;
+}
+
+.button:hover .glowblur,
+.button:hover .glowline {
+  stroke-dashoffset: 0;
+}
+
+.glowblur {
+  filter: blur(5px);
+  opacity: 0.6;
+}
