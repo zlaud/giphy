@@ -52,14 +52,14 @@ const Feed: React.FC<FeedProps> = ({ id }) => {
 
   return (
     <div>
-      <div className="container px-10 m-3">
+      <div className="container m-3">
         <label htmlFor="rating">
           Rating:
           <select
             id="rating"
             name="rating"
             onChange={handleFilter}
-            className="bg-white rounded-md p-1 m-1"
+            className="rounded-md p-1 m-1 text-black"
           >
             <option value="">All</option>
             <option value="g">G</option>
@@ -69,13 +69,24 @@ const Feed: React.FC<FeedProps> = ({ id }) => {
           </select>
         </label>
       </div>
-      <ImageList variant="masonry" cols={4} gap={8}>
-        {filtered.map((gif) => (
-          <ImageListItem key={gif.id}>
-            <img src={gif.images.original.url} alt={gif.alt_text} />
-          </ImageListItem>
-        ))}
-      </ImageList>
+      <div className="hidden lg:block">
+        <ImageList variant="masonry" cols={4} gap={8}>
+          {filtered.map((gif) => (
+            <ImageListItem key={gif.id}>
+              <img src={gif.images.original.url} alt={gif.alt_text} />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </div>
+      <div className="block lg:hidden">
+        <ImageList variant="masonry" cols={2} gap={8}>
+          {filtered.map((gif) => (
+            <ImageListItem key={gif.id}>
+              <img src={gif.images.original.url} alt={gif.alt_text} />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </div>
     </div>
   );
 };

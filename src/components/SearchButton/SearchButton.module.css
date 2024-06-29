@@ -1,15 +1,21 @@
 .button {
-  width: 175px;
-  height: 60px;
+  width: 100px;
+  height: 40px;
   cursor: pointer;
   background: transparent;
-  border: 1px solid #91c9ff;
+  border: 1px solid #9482d2;
   outline: none;
   position: relative;
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: border-color 5.5s ease-out 0.1s;
+  overflow: hidden;
+}
+
+.button:hover {
+  border-color: transparent;
 }
 
 .btnstatic {
@@ -46,24 +52,61 @@
   opacity: 1;
 }
 
-.glowblur,
-.glowline {
+.line1 {
   width: 100%;
   height: 100%;
   fill: transparent;
-  stroke: #91c9ff;
-  stroke-width: 2px;
+  stroke: #17f1d1;
+  stroke-width: 3px;
   stroke-dasharray: 480;
   stroke-dashoffset: 480;
   transition: stroke-dashoffset 0.5s ease-in;
 }
 
-.button:hover .glowblur,
-.button:hover .glowline {
+.line2 {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke: #ffd074;
+  stroke-width: 3px;
+  stroke-dasharray: 480;
+  stroke-dashoffset: 480;
+  transition: stroke-dashoffset 0.5s ease-in;
+  transition-delay: 0.1s;
+}
+
+.line3 {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke: #fafaf6;
+  stroke-width: 3px;
+  stroke-dasharray: 480;
+  stroke-dashoffset: 480;
+  transition: stroke-dashoffset 0.5s ease-in;
+  transition-delay: 0.2s;
+}
+
+.line4 {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke: #9482d2;
+  stroke-width: 3px;
+  stroke-dasharray: 480;
+  stroke-dashoffset: 480;
+  transition: stroke-dashoffset 0.5s ease-in;
+  transition-delay: 0.2s;
+}
+
+.button:hover .line1,
+.button:hover .line2,
+.button:hover .line3,
+.button:hover .line4 {
   stroke-dashoffset: 0;
 }
 
-.glowblur {
-  filter: blur(5px);
+/* .line1 {
+  filter: blur(2px);
   opacity: 0.6;
-}
+} */
