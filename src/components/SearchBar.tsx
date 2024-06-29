@@ -21,7 +21,7 @@ const SearchBar: React.FC<SearchProps> = ({ val }) => {
           placeholder="Search..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="rounded-full px-5 py-2 m-5 bg-transparent border-2 w-[32rem]"
+          className="rounded-full w-full px-5 py-2 m-5 bg-transparent border-2 w-[32rem]"
         />
         <SearchButton />
       </form>
