@@ -105,8 +105,3 @@
 .button:hover .line4 {
   stroke-dashoffset: 0;
 }
-
-/* .line1 {
-  filter: blur(2px);
-  opacity: 0.6;
-} */

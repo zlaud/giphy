@@ -20,7 +20,7 @@ interface FeedProps {
 const Feed: React.FC<FeedProps> = ({ id }) => {
   const [gifs, setGifs] = useState<Gif[]>([]);
   const [filtered, setFiltered] = useState<Gif[]>([]);
-  const [filterInput, setFilterInput] = useState<string | null>();
+  const [filterInput, setFilterInput] = useState<string>();
   useEffect(() => {
     const giphyAPI = process.env.NEXT_PUBLIC_API_KEY;
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPI}&q=${id}`;
